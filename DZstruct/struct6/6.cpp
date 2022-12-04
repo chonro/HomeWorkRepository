@@ -1,15 +1,15 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 struct Dimension {
 	int height, depth, width;
 };
 
 void input(struct Dimension* sizes);
-// объявление функции расчета поверхости шкафа
+// РѕР±СЉСЏРІР»РµРЅРёРµ С„СѓРЅРєС†РёРё СЂР°СЃС‡РµС‚Р° РїРѕРІРµСЂС…РѕСЃС‚Рё С€РєР°С„Р°
 int calculateSquare(struct Dimension sizes);
-// расчет объема шкафа
+// СЂР°СЃС‡РµС‚ РѕР±СЉРµРјР° С€РєР°С„Р°
 int calculateVolume(struct Dimension sizes);
-//расчёт сколько краски нужно на весь шкаф
+//СЂР°СЃС‡С‘С‚ СЃРєРѕР»СЊРєРѕ РєСЂР°СЃРєРё РЅСѓР¶РЅРѕ РЅР° РІРµСЃСЊ С€РєР°С„
 float calculateDye(struct Dimension sizes, float consumption);
 float calculatePaintingCost(struct Dimension sizes, float consumption, float workCost, float paintCost);
 float calculateCupboardCost(struct Dimension sizes, float cupboardCost);
@@ -19,12 +19,12 @@ float calculateCupboardMass(struct Dimension sizes, float cupboardMassMSq);
 float calculateElevationCost(struct Dimension sizes, float cupboardMassMSq,int etaz,float CostEtazKg);
 
 int main() {
-	struct Dimension sizes;//структура с размерами шкафа
-	float consumption = 0.17;//расход краски на м^2
-	float workCost = 560;// стоимость покаски одного кдвадратного метра (рабочим)
-	float paintCost = 3.6;// стоимость одного грамма краски
-	input(&sizes);// получаем размеры шкафа
-	float PW_Cost = calculatePaintingCost(sizes, consumption, workCost, paintCost);//вычисляем полную стоимость покраски шкафа
+	struct Dimension sizes;//СЃС‚СЂСѓРєС‚СѓСЂР° СЃ СЂР°Р·РјРµСЂР°РјРё С€РєР°С„Р°
+	float consumption = 0.17;//СЂР°СЃС…РѕРґ РєСЂР°СЃРєРё РЅР° Рј^2
+	float workCost = 560;// СЃС‚РѕРёРјРѕСЃС‚СЊ РїРѕРєР°СЃРєРё РѕРґРЅРѕРіРѕ РєРґРІР°РґСЂР°С‚РЅРѕРіРѕ РјРµС‚СЂР° (СЂР°Р±РѕС‡РёРј)
+	float paintCost = 3.6;// СЃС‚РѕРёРјРѕСЃС‚СЊ РѕРґРЅРѕРіРѕ РіСЂР°РјРјР° РєСЂР°СЃРєРё
+	input(&sizes);// РїРѕР»СѓС‡Р°РµРј СЂР°Р·РјРµСЂС‹ С€РєР°С„Р°
+	float PW_Cost = calculatePaintingCost(sizes, consumption, workCost, paintCost);//РІС‹С‡РёСЃР»СЏРµРј РїРѕР»РЅСѓСЋ СЃС‚РѕРёРјРѕСЃС‚СЊ РїРѕРєСЂР°СЃРєРё С€РєР°С„Р°
 
 	std::cout << PW_Cost<<std::endl;
 	float cupboardCost = 1000;
@@ -71,10 +71,10 @@ float calculateDye(struct Dimension sizes, float consumption) {
 }
 //1
 float calculatePaintingCost(struct Dimension sizes, float consumption, float workCost, float paintCost) {
-	int S = calculateSquare(sizes);// вычислили площадь шкафа
-	float dye_needed = S * consumption;// масса краски нав весь шкаф
-	float dye_cost = dye_needed * paintCost;//затрата на краску
-	float workerCost = S * workCost;// сколько нужно заплатить рабочим
+	int S = calculateSquare(sizes);// РІС‹С‡РёСЃР»РёР»Рё РїР»РѕС‰Р°РґСЊ С€РєР°С„Р°
+	float dye_needed = S * consumption;// РјР°СЃСЃР° РєСЂР°СЃРєРё РЅР°РІ РІРµСЃСЊ С€РєР°С„
+	float dye_cost = dye_needed * paintCost;//Р·Р°С‚СЂР°С‚Р° РЅР° РєСЂР°СЃРєСѓ
+	float workerCost = S * workCost;// СЃРєРѕР»СЊРєРѕ РЅСѓР¶РЅРѕ Р·Р°РїР»Р°С‚РёС‚СЊ СЂР°Р±РѕС‡РёРј
 	float rezult = workerCost + dye_cost;
 	
 	return rezult;

@@ -1,6 +1,6 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
-//1 задание 1 часть ,объявление структур 
+//1 Р·Р°РґР°РЅРёРµ 1 С‡Р°СЃС‚СЊ ,РѕР±СЉСЏРІР»РµРЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂ 
 struct scafs {
     int height, depth, width;
 };
@@ -73,7 +73,7 @@ int main(void) {
     struct books book = { "Tosltoy","War and piece","ast",1900,2000,2 };
     std::cout << "book   author: " << book.author << "   title:  " << book.title << "   publishing:  " << book.publishing << "   year:  " << book.year << "   lists:  " << book.lists << "   art:  " << book.art << "\n";
     struct bzyk bzyk1 = { 10,5,50,500 };
-    std::cout << "БЖУК   protein: " << bzyk1.protein << "   fats:  " << bzyk1.fats << "   carbohydrate:  " << bzyk1.carbohydrate << "   calories:  " << bzyk1.calories << "\n";
+    std::cout << "Р‘Р–РЈРљ   protein: " << bzyk1.protein << "   fats:  " << bzyk1.fats << "   carbohydrate:  " << bzyk1.carbohydrate << "   calories:  " << bzyk1.calories << "\n";
     struct  FIO fio = { "Alex","Alex","Alex" };
     std::cout << "fio    surname:  " << fio.surname << "   name:  " << fio.name << "   patronymic:  " << fio.patronymic << "\n";
     struct  noth noth1 = { 24,1024,"gray" };
